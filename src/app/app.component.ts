@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'observables';
+  title1: string = 'Angular-In-Examples';
+  title2: string = 'Observables and Observers, ....';
 }
