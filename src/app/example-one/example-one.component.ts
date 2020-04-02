@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { fromEvent } from 'rxjs';
+import { debounceTime} from 'rxjs/operators';
 
 @Component({
   selector: 'app-example-one',
@@ -8,9 +9,15 @@ import { FormControl } from '@angular/forms';
 })
 export class ExampleOneComponent implements OnInit {
 
-  mySearch: FormControl = new FormControl ('');
+  stream = fromEvent(document.getElementsByTagName('h5'), 'click');
 
-  constructor() { }
+  constructor() {
+    this.stream
+    .pipe(
+      debounceTime(5000)
+    )
+    .subscribe(param => console.log(param));
+  }
 
   ngOnInit(): void {
   }
