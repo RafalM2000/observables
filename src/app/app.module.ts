@@ -26,7 +26,8 @@ export const appRouter: Routes = [
     BrowserModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatInputModule
+    MatInputModule,
+    RouterModule.forRoot(appRouter)
   ],
   providers: [],
   bootstrap: [AppComponent]
