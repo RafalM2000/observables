@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title1: string = 'Angular-In-Examples';
-  title2: string = 'Observables and Observers, ....';
+  title2: string = 'Observables and Observers, fromEvent';
 }
