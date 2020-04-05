@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { fromEvent } from 'rxjs';
-import { debounceTime} from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-example-one',
@@ -9,17 +9,20 @@ import { debounceTime} from 'rxjs/operators';
 })
 export class ExampleOneComponent implements OnInit {
 
-  stream = fromEvent(document.getElementsByTagName('h5'), 'click');
+  posY: number;
 
-  constructor() {
-    this.stream
-    .pipe(
-      debounceTime(5000)
-    )
-    .subscribe(param => console.log(param));
-  }
+  constructor() {  }
 
   ngOnInit(): void {
+    const el = document.querySelector('.container');
+    const mouseMove = fromEvent<MouseEvent>(el, 'mousemove');
+
+    mouseMove.pipe(
+      filter(ev => ev.clientY > 430),
+      map(ev => ev.clientY)
+    )
+
+    .subscribe(data => this.posY = data);
   }
 
 }
