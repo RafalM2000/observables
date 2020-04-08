@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { fromEvent } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 
@@ -7,21 +7,19 @@ import { filter, map } from 'rxjs/operators';
   templateUrl: './example-one.component.html',
   styleUrls: ['./example-one.component.css']
 })
-export class ExampleOneComponent implements OnInit {
+export class ExampleOneComponent implements AfterViewInit {
 
   posY: number;
-
+  @ViewChild('monitoringArea') el: ElementRef;
   constructor() {  }
 
-  ngOnInit(): void {
-    const el = document.querySelector('.container');
-    const mouseMove = fromEvent<MouseEvent>(el, 'mousemove');
+  ngAfterViewInit(): void {
+    const mouseMove$ = fromEvent<MouseEvent>(this.el.nativeElement, 'mousemove');
 
-    mouseMove.pipe(
+    mouseMove$.pipe(
       filter(ev => ev.clientY > 430),
       map(ev => ev.clientY)
     )
-
     .subscribe(data => this.posY = data);
   }
 
