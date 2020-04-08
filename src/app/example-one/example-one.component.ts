@@ -10,18 +10,16 @@ import { filter, map } from 'rxjs/operators';
 export class ExampleOneComponent implements OnInit {
 
   posY: number;
-
   constructor() {  }
 
   ngOnInit(): void {
     const el = document.querySelector('.container');
-    const mouseMove = fromEvent<MouseEvent>(el, 'mousemove');
+    const mouseMove$ = fromEvent<MouseEvent>(el, 'mousemove');
 
-    mouseMove.pipe(
+    mouseMove$.pipe(
       filter(ev => ev.clientY > 430),
       map(ev => ev.clientY)
     )
-
     .subscribe(data => this.posY = data);
   }
 
