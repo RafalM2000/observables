@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { of, interval } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { interval, of } from 'rxjs';
+
 
 
 @Component({
@@ -15,18 +15,13 @@ export class ExampleThreeComponent implements OnInit {
   constructor() { }
 
    ngOnInit() {
-    const counter$ = interval(50);
-    const sub = counter$.subscribe(data => console.log(data));
+     const counter$ = interval(1000);
+     const sub = counter$.subscribe(data => console.log(data));
 
-    setTimeout(() => sub.unsubscribe() , 6000);
-   }
-
-  observablesRun() {
-    of({name: 'Stefan', age: 30, sex: 'mężczyzna'}, {name: 'Ola', age: 18, sex: 'kobieta'})
-    .pipe(
-      map(data => {
-        return {name: data.name, sex: data.sex};
-      }))
-    .subscribe(data => console.log(data));
-  }
+     setTimeout(() => sub.unsubscribe(), 7000);
+     }
+    observableRun() {
+      of({name: 'Stefan', age: 45, sex: 'mężczyzna'}, {name: 'Sefania', age: 30, sex: 'kobieta'})
+      .subscribe(data => console.log(data));
+    }
 }

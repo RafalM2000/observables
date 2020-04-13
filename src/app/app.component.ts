@@ -22,7 +22,7 @@ export class AppComponent implements DoCheck {
         this.title3 = 'valueChanges, debounceTime';
         break;
       case '/three':
-        this.title3 = 'unsubscribe, of, interval';
+        this.title3 = 'interval, of, unsubscribe';
         break;
       default:
         this.title3 = 'fromEvent, filter, map';
