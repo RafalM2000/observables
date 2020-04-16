@@ -3,19 +3,24 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatListModule } from '@angular/material/list';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { ExampleOneComponent } from './example-one/example-one.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ExampleTwoComponent } from './example-two/example-two.component';
-import { ExampleThreeComponent } from './three/example-three.component';
+import { ExampleThreeComponent } from './example-three/example-three.component';
+import { ExampleFourComponent } from './example-four/example-four.component';
+import { ExampleFourDetailsComponent } from './example-four-details/example-four-details.component';
 
 export const appRouter: Routes = [
   {path: '', component: ExampleOneComponent},
   {path: 'one', component: ExampleOneComponent},
   {path: 'two', component: ExampleTwoComponent},
   {path: 'three', component: ExampleThreeComponent},
+  {path: 'four', component: ExampleFourComponent},
+  {path: 'fourdetails/:id', component: ExampleFourDetailsComponent},
   {path: '**', component: ExampleOneComponent}
 ];
 
@@ -24,7 +29,9 @@ export const appRouter: Routes = [
     AppComponent,
     ExampleOneComponent,
     ExampleTwoComponent,
-    ExampleThreeComponent
+    ExampleThreeComponent,
+    ExampleFourComponent,
+    ExampleFourDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +39,7 @@ export const appRouter: Routes = [
     BrowserAnimationsModule,
     MatInputModule,
     MatButtonModule,
+    MatListModule,
     RouterModule.forRoot(appRouter)
   ],
   providers: [],
