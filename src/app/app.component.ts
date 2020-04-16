@@ -24,6 +24,9 @@ export class AppComponent implements DoCheck {
       case '/three':
         this.title3 = 'interval, of, unsubscribe';
         break;
+        case '/four':
+          this.title3 = 'routes and observables';
+          break;
       default:
         this.title3 = 'fromEvent, filter, map';
     }
