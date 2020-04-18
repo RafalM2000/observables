@@ -27,6 +27,6 @@ export class ExampleFourComponent implements OnInit {
   }
 
   onRow(author) {
-    this.router.navigate(['/fourdetails', author.id]);
+    this.router.navigate(['fourdetails', author.id]);
   }
 }

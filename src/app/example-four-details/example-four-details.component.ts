@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router'
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-example-four-details',
@@ -10,12 +11,17 @@ export class ExampleFourDetailsComponent implements OnInit {
 
   authorId: number;
 
-  constructor(private router: Router, private routerActive: ActivatedRoute) {
-    this.routerActive.paramMap
-    .subscribe(params => this.authorId = + params.get('id'));
+  constructor(private router: Router, private routeActive: ActivatedRoute) {
+    this.routeActive.paramMap
+    .subscribe(param => this.authorId = + param.get('id'));
    }
 
   ngOnInit(): void {
+  }
+
+  previousRow() {
+    this.authorId = this.authorId - 1;
+    this.router.navigate(['/fourdetails', this.authorId]);
   }
 
   nextRow() {
@@ -23,8 +29,4 @@ export class ExampleFourDetailsComponent implements OnInit {
     this.router.navigate(['/fourdetails', this.authorId]);
   }
 
-  previousRow() {
-    this.authorId = this.authorId - 1;
-    this.router.navigate(['/fourdetails', this.authorId]);
-  }
 }

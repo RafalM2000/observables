@@ -28,7 +28,7 @@ export class AppComponent implements DoCheck {
           this.title3 = 'routes and observables';
           break;
       default:
-        this.title3 = 'fromEvent, filter, map';
+        this.title3 = 'routes and observables';
     }
   }
 }
