@@ -13,6 +13,7 @@ import { ExampleTwoComponent } from './example-two/example-two.component';
 import { ExampleThreeComponent } from './example-three/example-three.component';
 import { ExampleFourComponent } from './example-four/example-four.component';
 import { ExampleFourDetailsComponent } from './example-four-details/example-four-details.component';
+import { ExampleFiveComponent } from './example-five/example-five.component';
 
 export const appRouter: Routes = [
   {path: '', component: ExampleOneComponent},
@@ -20,6 +21,7 @@ export const appRouter: Routes = [
   {path: 'two', component: ExampleTwoComponent},
   {path: 'three', component: ExampleThreeComponent},
   {path: 'four', component: ExampleFourComponent},
+  {path: 'five', component: ExampleFiveComponent},
   {path: 'fourdetails/:id', component: ExampleFourDetailsComponent},
   {path: '**', component: ExampleOneComponent}
 ];
@@ -31,7 +33,8 @@ export const appRouter: Routes = [
     ExampleTwoComponent,
     ExampleThreeComponent,
     ExampleFourComponent,
-    ExampleFourDetailsComponent
+    ExampleFourDetailsComponent,
+    ExampleFiveComponent
   ],
   imports: [
     BrowserModule,
