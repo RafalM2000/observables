@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { of, Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 interface Authors {
   id: number;
@@ -20,10 +20,11 @@ export class ExampleFiveComponent implements OnInit {
     {id: 4, name: 'Franz Kafka'},
   ];
 
-  authors$: Observable<Authors[]> = of(this.authors);
 
   constructor() {
   }
+
+  authors$: Observable<Authors[]> = of(this.authors);
 
   ngOnInit(): void {
   }
