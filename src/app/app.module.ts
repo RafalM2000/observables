@@ -16,6 +16,8 @@ import { ExampleFourDetailsComponent } from './example-four-details/example-four
 import { ExampleFiveComponent } from './example-five/example-five.component';
 import { ExampleSixComponent } from './example-six/example-six.component';
 
+import { UserActionService } from './user-action.service';
+
 export const appRouter: Routes = [
   {path: '', component: ExampleOneComponent},
   {path: 'one', component: ExampleOneComponent},
@@ -48,7 +50,7 @@ export const appRouter: Routes = [
     MatListModule,
     RouterModule.forRoot(appRouter)
   ],
-  providers: [],
+  providers: [UserActionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
