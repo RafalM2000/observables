@@ -30,6 +30,9 @@ export class AppComponent implements DoCheck {
           case '/five':
             this.title3 = 'AsyncPipe';
             break;
+          case '/six':
+            this.title3 = 'Subject';
+            break;
       default:
         this.title3 = 'routes and observables';
     }
