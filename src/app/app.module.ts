@@ -14,6 +14,9 @@ import { ExampleThreeComponent } from './example-three/example-three.component';
 import { ExampleFourComponent } from './example-four/example-four.component';
 import { ExampleFourDetailsComponent } from './example-four-details/example-four-details.component';
 import { ExampleFiveComponent } from './example-five/example-five.component';
+import { ExampleSixComponent } from './example-six/example-six.component';
+
+import { UserActionService } from './user-action.service';
 
 export const appRouter: Routes = [
   {path: '', component: ExampleOneComponent},
@@ -22,6 +25,7 @@ export const appRouter: Routes = [
   {path: 'three', component: ExampleThreeComponent},
   {path: 'four', component: ExampleFourComponent},
   {path: 'five', component: ExampleFiveComponent},
+  {path: 'six', component: ExampleSixComponent},
   {path: 'fourdetails/:id', component: ExampleFourDetailsComponent},
   {path: '**', component: ExampleOneComponent}
 ];
@@ -34,7 +38,8 @@ export const appRouter: Routes = [
     ExampleThreeComponent,
     ExampleFourComponent,
     ExampleFourDetailsComponent,
-    ExampleFiveComponent
+    ExampleFiveComponent,
+    ExampleSixComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +50,7 @@ export const appRouter: Routes = [
     MatListModule,
     RouterModule.forRoot(appRouter)
   ],
-  providers: [],
+  providers: [UserActionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
