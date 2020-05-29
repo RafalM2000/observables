@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserActionService } from '../user-action.service';
 
 @Component({
   selector: 'app-example-six',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExampleSixComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: UserActionService) { }
 
   ngOnInit(): void {
   }
 
+  switchON() {
+    this.service.valueEmitter.next(Math.random());
+  }
 }

@@ -1,17 +1,25 @@
-import { Component, DoCheck } from '@angular/core';
+import { Component, DoCheck , OnInit} from '@angular/core';
 import { Router } from '@angular/router';
+import { UserActionService } from './user-action.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements DoCheck {
+export class AppComponent implements DoCheck, OnInit {
   title1: string = 'Angular-In-Examples';
   title2: string = 'Observables, Observers i subscribe';
   title3: string = 'fromEvent, filter, map';
 
-  constructor(private currentRoute: Router) {}
+  randomValue: number;
+
+  constructor(private currentRoute: Router, private service: UserActionService) {}
+
+  ngOnInit() {
+    this.service.valueEmitter
+    .subscribe(data => this.randomValue = data);
+  }
 
   ngDoCheck() {
     switch (this.currentRoute.url) {
