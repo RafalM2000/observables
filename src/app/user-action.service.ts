@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserActionService {
 
-  valueEmitter = new Subject<number>();
+  valueEmitter = new BehaviorSubject<number>(100);
   constructor() { }
 }
