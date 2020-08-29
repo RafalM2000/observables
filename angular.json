@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "observables"
+  "defaultProject": "observables",
+  "cli": {
+    "analytics": "476f006d-cf2b-4d3b-9e14-f4b75d845f68"
+  }
 }

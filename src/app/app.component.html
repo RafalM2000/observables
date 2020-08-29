@@ -12,10 +12,14 @@
   <a routerLink="/four" routerLinkActive="active">Przykład 4</a>
   <a routerLink="/five" routerLinkActive="active">Przykład 5</a>
   <a routerLink="/six" routerLinkActive="active">Przykład 6</a>
+  <a routerLink="/seven" routerLinkActive="active">Przykład 7</a>
 </nav>
 
 <div class="container">
   <router-outlet></router-outlet>
 </div>
 
-<div class = "jumbotron">Szczęśliwa liczba dnia to: {{randomValue}}</div>
+<div class = "jumbotron">
+  <p>Szczęśliwa liczba dnia to: {{randomValue}}. Wysłana do AppComponentu z Przykładu 6. Wartość inicjalna 100.</p>
+</div>
+

@@ -15,8 +15,10 @@ import { ExampleFourComponent } from './example-four/example-four.component';
 import { ExampleFourDetailsComponent } from './example-four-details/example-four-details.component';
 import { ExampleFiveComponent } from './example-five/example-five.component';
 import { ExampleSixComponent } from './example-six/example-six.component';
+import { SevenComponent } from './seven/seven.component';
 
 import { UserActionService } from './user-action.service';
+
 
 export const appRouter: Routes = [
   {path: '', component: ExampleOneComponent},
@@ -26,6 +28,7 @@ export const appRouter: Routes = [
   {path: 'four', component: ExampleFourComponent},
   {path: 'five', component: ExampleFiveComponent},
   {path: 'six', component: ExampleSixComponent},
+  {path: 'seven', component: SevenComponent},
   {path: 'fourdetails/:id', component: ExampleFourDetailsComponent},
   {path: '**', component: ExampleOneComponent}
 ];
@@ -39,7 +42,8 @@ export const appRouter: Routes = [
     ExampleFourComponent,
     ExampleFourDetailsComponent,
     ExampleFiveComponent,
-    ExampleSixComponent
+    ExampleSixComponent,
+    SevenComponent
   ],
   imports: [
     BrowserModule,
