@@ -42,7 +42,7 @@ export class AppComponent implements DoCheck, OnInit {
             this.title3 = 'Subject, BehaviorSubject';
             break;
             case '/seven':
-              this.title3 = 'distinctUntilChanged';
+              this.title3 = 'distinctUntilChanged, distinctUntilKeyChanged';
               break;
       default:
         this.title3 = 'routes and observables';
