@@ -18,6 +18,7 @@ import { ExampleSixComponent } from './example-six/example-six.component';
 import { SevenComponent } from './seven/seven.component';
 
 import { UserActionService } from './user-action.service';
+import { EightComponent } from './eight/eight.component';
 
 
 export const appRouter: Routes = [
@@ -29,6 +30,7 @@ export const appRouter: Routes = [
   {path: 'five', component: ExampleFiveComponent},
   {path: 'six', component: ExampleSixComponent},
   {path: 'seven', component: SevenComponent},
+  {path: 'eight', component: EightComponent},
   {path: 'fourdetails/:id', component: ExampleFourDetailsComponent},
   {path: '**', component: ExampleOneComponent}
 ];
@@ -43,7 +45,8 @@ export const appRouter: Routes = [
     ExampleFourDetailsComponent,
     ExampleFiveComponent,
     ExampleSixComponent,
-    SevenComponent
+    SevenComponent,
+    EightComponent
   ],
   imports: [
     BrowserModule,

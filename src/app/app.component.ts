@@ -44,6 +44,9 @@ export class AppComponent implements DoCheck, OnInit {
             case '/seven':
               this.title3 = 'distinctUntilChanged, distinctUntilKeyChanged';
               break;
+              case '/eight':
+                this.title3 = 'switchMap';
+                break;
       default:
         this.title3 = 'routes and observables';
     }
