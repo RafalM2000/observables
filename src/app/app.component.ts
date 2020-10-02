@@ -48,7 +48,7 @@ export class AppComponent implements DoCheck, OnInit {
             this.title3 = 'switchMap';
             break;
           case '/nine':
-            this.title3 = 'mergeMap';
+            this.title3 = 'mergeMap, take, skip';
             break;
       default:
         this.title3 = 'routes and observables';
