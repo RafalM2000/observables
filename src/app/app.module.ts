@@ -20,6 +20,7 @@ import { SevenComponent } from './seven/seven.component';
 import { UserActionService } from './user-action.service';
 import { EightComponent } from './eight/eight.component';
 import { NineComponent } from './nine/nine.component';
+import { TenComponent } from './ten/ten.component';
 
 
 export const appRouter: Routes = [
@@ -49,7 +50,8 @@ export const appRouter: Routes = [
     ExampleSixComponent,
     SevenComponent,
     EightComponent,
-    NineComponent
+    NineComponent,
+    TenComponent
   ],
   imports: [
     BrowserModule,
