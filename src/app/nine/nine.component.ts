@@ -12,11 +12,11 @@ export class NineComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-  //   fromEvent<MouseEvent>(document, 'click').pipe(
-  //     map(ev => ev.clientX),
-  //     mergeMap((num) => of('Pozycja pozioma kursora: ', num))
-  //   ).subscribe(console.log)
-  // }
+    fromEvent<MouseEvent>(document, 'click').pipe(
+      map(ev => ev.clientX),
+      mergeMap((num) => of('Pozycja pozioma kursora: ', num))
+    ).subscribe(console.log)
+  }
 
   fromEvent<MouseEvent>(document, 'click').pipe(
     skip(3)
