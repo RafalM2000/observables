@@ -17,9 +17,4 @@ export class NineComponent implements OnInit {
       mergeMap((num) => of('Pozycja pozioma kursora: ', num))
     ).subscribe(console.log)
   }
-
-  fromEvent<MouseEvent>(document, 'click').pipe(
-    skip(3)
-  ).subscribe(console.log);
-  }
 }
